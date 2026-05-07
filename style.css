@@ -1,0 +1,212 @@
+/* =========================
+   BASE RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* =========================
+     🌌 ANIMATED BACKGROUND
+  ========================= */
+  body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ffcc00);
+    background-size: 300% 300%;
+    animation: bgMove 12s ease infinite;
+    opacity: 0.18;
+    z-index: -3;
+  }
+  
+  @keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* =========================
+     PARTICLES LAYER
+  ========================= */
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  
+  /* =========================
+     FLOATING BLOBS
+  ========================= */
+  .blob {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    filter: blur(120px);
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite alternate;
+  }
+  
+  .b1 { background: #ff00cc; top: 10%; left: 10%; }
+  .b2 { background: #00ffcc; bottom: 10%; right: 10%; }
+  .b3 { background: #ffcc00; top: 50%; left: 50%; }
+  
+  @keyframes float {
+    from { transform: translateY(0px) scale(1); }
+    to { transform: translateY(70px) scale(1.05); }
+  }
+  
+  /* =========================
+     APP CONTAINER
+  ========================= */
+  .app {
+    width: 92%;
+    max-width: 1050px;
+    margin: auto;
+    padding: 30px 0;
+  }
+  
+  /* =========================
+     HEADER
+  ========================= */
+  .header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .header h1 {
+    font-size: 44px;
+    text-shadow: 0 0 25px rgba(255,255,255,0.8);
+  }
+  
+  .header p {
+    opacity: 0.7;
+    margin-top: 5px;
+  }
+  
+  /* =========================
+     CARDS (GLASS UI)
+  ========================= */
+  .card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(22px);
+    border-radius: 22px;
+    padding: 22px;
+    margin: 14px 0;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(0,255,204,0.35);
+  }
+  
+  /* glow special card */
+  .glow {
+    box-shadow: 0 0 25px rgba(0,255,204,0.25);
+  }
+  
+  /* =========================
+     GRID LAYOUT
+  ========================= */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  /* =========================
+     INPUTS / TEXTAREA / SELECT
+  ========================= */
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    transition: 0.2s ease;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: 0 0 18px #00ffcc;
+    transform: scale(1.01);
+  }
+  
+  /* textarea height */
+  .big textarea {
+    height: 140px;
+    resize: none;
+  }
+  
+  /* =========================
+     BUTTON (MAIN CTA)
+  ========================= */
+  .mainBtn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
+    background-size: 300% 300%;
+    color: white;
+    transition: 0.3s;
+    animation: btnGlow 6s infinite;
+  }
+  
+  .mainBtn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 40px #ff00cc;
+  }
+  
+  @keyframes btnGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* =========================
+     OUTPUT BOX
+  ========================= */
+  .output pre {
+    white-space: pre-wrap;
+    min-height: 140px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .header h1 {
+      font-size: 32px;
+    }
+  
+    .app {
+      width: 95%;
+    }
+  }
