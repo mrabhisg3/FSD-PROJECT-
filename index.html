@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Email Studio ✨</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+
+<body>
+
+<!-- particles -->
+<div id="particles-js"></div>
+
+<!-- glowing background blobs -->
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<!-- MAIN APP -->
+<div class="app">
+
+  <div class="header">
+    <h1>🚀 AI Email Studio</h1>
+    <p>Generate professional emails with AI-powered intelligence</p>
+  </div>
+
+  <!-- AI QUICK BOX -->
+  <div class="card glow">
+    <h2>🧠 AI Quick Writer</h2>
+    <input id="shortInput" placeholder="Type short idea...">
+    <button onclick="generateMessage()">⚡ Generate Smart Message</button>
+  </div>
+
+  <!-- FORM GRID -->
+  <div class="grid">
+
+    <div class="card">
+      <h3>👤 Sender Info</h3>
+      <input id="senderName" placeholder="Your Name">
+      <input id="senderEmail" placeholder="Your Email">
+    </div>
+
+    <div class="card">
+      <h3>🎯 Receiver Info</h3>
+      <input id="receiverName" placeholder="Receiver Name">
+
+      <!-- 🔥 ADDED HERE -->
+      <input id="receiverEmail" placeholder="Receiver Email">
+
+      <input id="purpose" placeholder="Purpose (auto subject)">
+    </div>
+
+  </div>
+
+  <!-- MAIN TEXT -->
+  <div class="card big">
+    <h3>✍️ Email Content</h3>
+    <textarea id="inputText" placeholder="Write or generate your email..."></textarea>
+    <textarea id="extraDetails" placeholder="Extra details (optional)"></textarea>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="card options">
+
+    <select id="tone">
+      <option>⚡ formal</option>
+      <option>💬 friendly</option>
+      <option>📚 research</option>
+    </select>
+
+    <select id="type">
+      <option>📩 Leave Request</option>
+      <option>💼 Internship</option>
+      <option>⚠️ Complaint</option>
+      <option>🎓 Academic</option>
+    </select>
+
+  </div>
+
+  <!-- ACTION BUTTON -->
+  <button class="mainBtn" onclick="generateEmail()">
+    🚀 Send Professional Email
+  </button>
+
+  <!-- OUTPUT -->
+  <div class="card output">
+    <h3>📨 Generated Email</h3>
+    <pre id="output"></pre>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
